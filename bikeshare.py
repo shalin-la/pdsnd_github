@@ -187,6 +187,7 @@ def user_stats(df,city):
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
+    """ The info on uer types will be common to all cities, so seperated from the if statement"""
 
     # TO DO: Display counts of user types
     cust_num = len(df[df['User Type'] == 'Customer'])
@@ -195,7 +196,7 @@ def user_stats(df,city):
     unspec_num = len(df[df['User Type'].isna()]) # New York ONLY!
 
 
-
+    """ Seperating Washington from if statement as it does not have user gender or age """
 
     if city != 'washington':
         # TO DO: Display counts of gender
