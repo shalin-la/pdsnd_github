@@ -11,8 +11,10 @@ This project is the demonstration of my ability to use Git version control.
 This involves simulating a realistic workflow to refactor my previous BikeShare Python project.
 
 This project comprises four parts:
-1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. THis will be used to upload my project files.
+1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. This will be used to upload my project files.
 2. Improve Documentation - Create a branch using Git for adding docstrings and README file for the bikeshare project.
+        Actions:
+    *   Adding docstrings to user_stat function to explain why an if statement was created
 3. Refactor Code - Create a refactoring branch to improve my code and add missing components to the code.
 4. Merge Branches - Merge branches to the master branch that will be pushed to the remote repo.
 
