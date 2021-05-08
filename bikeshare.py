@@ -239,6 +239,21 @@ def user_stats(df,city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('_'*50)
 
+def raw_data(df):
+    """ Raw data is displayed upon request by users
+    Requested in rubric that 5 lines of raw data to be displayyed
+    """
+    idx = 0
+
+    print('Would you like to see 5 rows of raw data used to derive statistics?')
+    data_iter = input('Please type (yes/no):')
+    while True:
+        if data_iter.lower() =='no':
+            return
+        elif data_iter.lower() =='yes':
+            print(df[idx:idx + 5])
+            idx += 5
+        data_iter = input('\n Would you like to see five more rows? Please type (yes/no):')
 
 def main():
     while True:
@@ -249,6 +264,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df,city)
+        raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
