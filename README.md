@@ -15,7 +15,10 @@ This project comprises four parts:
 2. Improve Documentation - Create a branch using Git for adding docstrings and README file for the bikeshare project.
         Actions:
     *   Adding docstrings to user_stat function to explain why an if statement was created
+    *   Removed To Do comments from the code
 3. Refactor Code - Create a refactoring branch to improve my code and add missing components to the code.
+        Actions:
+    *   Added Raw Data function to iterate through raw data 5 rows at a time.
 4. Merge Branches - Merge branches to the master branch that will be pushed to the remote repo.
 
 ### Files used

@@ -16,9 +16,8 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # This requests user input for city (chicago, new york city, washington).
     while True:
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
         city = input("Please choose a city from Chicago, Washington or New York: ").strip()
         if city.lower() == 'chicago':
             city = 'chicago'
@@ -30,7 +29,7 @@ def get_filters():
             print('Sorry that is not a valid input! Please try again!')
             break
 
-        # TO DO: get user input for month (all, january, february, ... , june)
+        # This requests get user input for month (all, january, february, ... , june)
         filter1 = input("Do you want to filter by a month? Type:(yes/no)")
         if filter1.lower() == 'yes':
             month = input("Please select a month from January, February, March, April, May or June?").title()
@@ -43,7 +42,7 @@ def get_filters():
             print('Sorry that is not a valid input! Please try again!')
             break
 
-        # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+        # This get user input for day of week (all, monday, tuesday, ... sunday)
         filter2 = input("Do you want to filter by a day? Type:(yes/no)")
         if filter2.lower() == 'yes':
             day = input("Please select a day from Sunday to Saturday: ").title()
@@ -87,9 +86,6 @@ def load_data(city, month, day):
 
     # filter by month if applicable
     if month != 'all':
-        # use the index of the months list to get the corresponding int
-        #months = ['january', 'february', 'march', 'april', 'may', 'june']
-        # month = months.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
@@ -109,21 +105,13 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
-    month_mode = df['month'].mode()[0]
+    df['day_of_week'] = df['Start Time'].dt.day_name()  #This creates a day name column
 
-    # TO DO: display the most common day of week
-    df['day_of_week'] = df['Start Time'].dt.day_name()
-    day_mode = df['day_of_week'].mode()[0]
-
-    # TO DO: display the most common start hour
-    s_hour_mode = df['s_hour'].mode()[0]
-
-    # TO DO: display the most common end hour
-    e_hour_mode = df['e_hour'].mode()[0]
-
-    # TO DO: display the most day of the month
-    dom_mode = df['day_of_month'].mode()[0]
+    month_mode = df['month'].mode()[0]        # This display the most common month
+    day_mode = df['day_of_week'].mode()[0]    # This display the most common day of week
+    s_hour_mode = df['s_hour'].mode()[0]      # This display the most common start hour (checkout time)
+    e_hour_mode = df['e_hour'].mode()[0]      # This display the most common end hour (return time)
+    dom_mode = df['day_of_month'].mode()[0]   # This display the most popular day of the month
 
     print("Statistics on times of travel")
     print('Most Frequent start hour is:', s_hour_mode)
@@ -143,15 +131,14 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
-    s_station_mode = df['Start Station'].mode()[0]
 
-    # TO DO: display most commonly used end station
-    e_station_mode = df['End Station'].mode()[0]
+    s_station_mode = df['Start Station'].mode()[0]   # displays most commonly used start station
+    e_station_mode = df['End Station'].mode()[0]     # displays most commonly used end station
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # display most frequent combination of start station and end station trip
     route_mode = (df['Start Station'] + ' to ' + df['End Station']).mode()[0]
 
+    # Printing the output
     print("Statistics on location of stations")
     print('Most popular start station is: ', s_station_mode)
     print('Most popular end station is: ', e_station_mode)
@@ -167,11 +154,8 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
-    trip_total = df['Trip Duration'].sum()
-
-    # TO DO: display mean travel time
-    trip_mean = df['Trip Duration'].mean()
+    trip_total = df['Trip Duration'].sum()   # displays total travel time
+    trip_mean = df['Trip Duration'].mean()   # displays mean travel time
 
     print("Statistics on trip durations")
     print('Total trip hours: {} hours'.format(trip_total/(60*60)))
@@ -189,29 +173,29 @@ def user_stats(df,city):
     start_time = time.time()
     """ The info on uer types will be common to all cities, so seperated from the if statement"""
 
-    # TO DO: Display counts of user types
-    cust_num = len(df[df['User Type'] == 'Customer'])
-    sub_num = len(df[df['User Type'] == 'Subscriber'])
-    dep_num = len(df[df['User Type'] == 'Dependent']) # Chicago ONLY!!
-    unspec_num = len(df[df['User Type'].isna()]) # New York ONLY!
+
+    cust_num = len(df[df['User Type'] == 'Customer'])   # displays counts of customers
+    sub_num = len(df[df['User Type'] == 'Subscriber'])  # displays counts of subscribers
+    dep_num = len(df[df['User Type'] == 'Dependent'])   # Chicago ONLY!! displays counts of dependents
+    unspec_num = len(df[df['User Type'].isna()])        # New York ONLY! displays count of unspecified user
 
 
     """ Seperating Washington from if statement as it does not have user gender or age """
 
     if city != 'washington':
-        # TO DO: Display counts of gender
+
         """ Not for washington """
 
-        male_count = len(df[df['Gender'] == 'Male'])
-        female_count = len(df[df['Gender'] == 'Female'])
-        undisc_count = df.shape[0] - (male_count + female_count)
+        male_count = len(df[df['Gender'] == 'Male'])                # Displays counts of male
+        female_count = len(df[df['Gender'] == 'Female'])            # Displays counts of female
+        undisc_count = df.shape[0] - (male_count + female_count)    # Displays counts of undisclosed gender
 
-        # TO DO: Display earliest, most recent, and most common year of birth
+
         """ Not for washington """
 
-        earliest_year = df['Birth Year'].min()
-        most_recent_year = df['Birth Year'].max()
-        popular_birth_year = df['Birth Year'].mode()[0]
+        earliest_year = df['Birth Year'].min()                      # Displays olders user
+        most_recent_year = df['Birth Year'].max()                   # Displays youngest user
+        popular_birth_year = df['Birth Year'].mode()[0]             # Displays common age group
 
         print("Statistics on bikeshare users")
         print('Number of customers:',cust_num)
