@@ -4,7 +4,7 @@
 11 May 2021
 
 ### Project Title
-Project for Intro. to Version Control
+Resubmission: Project for Intro. to Version Control
 
 ### Description
 This project is the resubmission of the previous project. I have created a submission branch where i will redo the commits.
@@ -15,9 +15,15 @@ The previous reviewer allowed me the option to submit only the report, but i wan
 "If you would like to avoid this, make sure the commit messages in the report, follow the guideline and add a note to your next submission. The note should explain to the next reviewer that the previous reviewer gave you the option to correct the report alone.."
 
 This project comprises four parts:
-1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. THis will be used to upload my project files.
+1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. This will be used to upload my project files.
+                        -  Created a branch from the initial commit called 'Submissions'
+                        
 2. Improve Documentation - Create a branch using Git for adding docstrings and README file for the bikeshare project.
+                        - created a branch from 'submissions' to 'documentation2'
+
 3. Refactor Code - Create a refactoring branch to improve my code and add missing components to the code.
+                        - created a branch from 'submissions' to 'refactoring2'
+
 4. Merge Branches - Merge branches to the master branch that will be pushed to the remote repo.
 
 ### Files used
