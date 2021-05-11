@@ -1,33 +1,41 @@
 >**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-08 May 2021
+11 May 2021
 
 ### Project Title
-Project for Intro. to Version Control
+Resubmission: Project for Intro. to Version Control
 
-### Description
-This project is the demonstration of my ability to use Git version control.
-This involves simulating a realistic workflow to refactor my previous BikeShare Python project.
+
+This project is the resubmission of the previous project. I have created a submission branch where i will redo the commits.
+
+The previous reviewer allowed me the option to submit only the report, but i wanted to also redo the repo.
+
+### Note from previous reviewer
+"If you would like to avoid this, make sure the commit messages in the report, follow the guideline and add a note to your next submission. The note should explain to the next reviewer that the previous reviewer gave you the option to correct the report alone.."
 
 This project comprises four parts:
-1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. This will be used to upload my project files.
+1. Setting up a repository - Forking and cloning a Udacity repository to my local computer. This will be used to upload my project files.                    
 2. Improve Documentation - Create a branch using Git for adding docstrings and README file for the bikeshare project.
-        Actions:
-    *   Adding docstrings to user_stat function to explain why an if statement was created
-    *   Removed To Do comments from the code
 3. Refactor Code - Create a refactoring branch to improve my code and add missing components to the code.
-        Actions:
-    *   Added Raw Data function to iterate through raw data 5 rows at a time.
+4. Merge Branches - Merge branches to the master branch that will be pushed to the remote repo.
+
+
+### Log of actions
+This project comprises four parts:
+1. Setting up a repository  - Created a branch from the initial commit called 'Submissions'
+2. Improve Documentation    - created a branch from 'submissions' to 'documentation2'
+3. Refactor Code            - created a branch from 'submissions' to 'refactoring2'
+                            - Create a refactoring branch to improve my code and add missing components to the code.
 4. Merge Branches - Merge branches to the master branch that will be pushed to the remote repo.
 
 ### Files used
+
 I used the initial bikeshare.py file
 Read data from the following CSV files:
 'chicago.csv'
 'new_york_city.csv'
 'washington.csv'
-
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
